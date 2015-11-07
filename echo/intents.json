@@ -10,6 +10,32 @@
       ]
     },
     {
+     "intent": "PlaySpecificIntent",
+     "slots": [
+        {
+          "name": "Music",
+          "type": "SongTitle"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "SayIntent",
+     "slots": [
+        {
+          "name": "Say",
+          "type": "Words"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
       "intent": "PauseIntent",
       "slots": []
     },

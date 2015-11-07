@@ -32,6 +32,16 @@ EchoSonos.prototype.intentHandlers = {
         options.path = '/preset/'+encodeURIComponent(intent.slots.Preset.value);
         httpreq(options, response, "Playing " + intent.slots.Preset.value);
     },
+    PlaySpecificIntent: function (intent, session, response) {
+        console.log("PlaySpecificIntent received");
+        options.path = '/specific/'+encodeURIComponent(intent.slots.Preset.value);
+        httpreq(options, response, "Playing " + intent.slots.Preset.value);
+    },
+    SayIntent: function (intent, session, response) {
+        console.log("SayIntent received");
+        options.path = '/'+encodeURIComponent(intent.slots.Room.value)+'/say/'+encodeURIComponent(intent.slots.Say.value);
+        httpreq(options, response, "Saying " + intent.slots.Say.value);
+    },
     PauseIntent: function (intent, session, response) {
         console.log("PauseIntent received");
         options.path = '/pauseall';

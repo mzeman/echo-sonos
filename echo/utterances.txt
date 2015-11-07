@@ -3,6 +3,10 @@ PlayIntent play {rock|Preset}
 PlayIntent play {rap|Preset}
 PlayIntent play {pop rap|Preset}
 
+PlaySpecificIntent play specific {Music} in {Room}
+SayIntent say {Say} in {Room}
+SayIntent say {Say} in the {Room}
+
 PauseIntent pause
 PauseIntent stop
 PauseIntent stop the music
