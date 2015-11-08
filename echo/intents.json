@@ -40,6 +40,10 @@
       "slots": []
     },
     {
+      "intent": "ResumeIntent",
+      "slots": []
+    },
+    {
       "intent": "VolumeDownIntent",
       "slots": []
     },

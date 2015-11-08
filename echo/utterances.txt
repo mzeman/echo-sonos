@@ -1,11 +1,14 @@
-PlayIntent play {test|Preset}
-PlayIntent play {rock|Preset}
-PlayIntent play {rap|Preset}
-PlayIntent play {pop rap|Preset}
+PlayIntent play {Preset}
 
 PlaySpecificIntent play specific {Music} in {Room}
+
 SayIntent say {Say} in {Room}
 SayIntent say {Say} in the {Room}
+
+ResumeIntent resume
+ResumeIntent continue
+ResumeIntent continue the music
+ResumeIntent resume the music
 
 PauseIntent pause
 PauseIntent stop
@@ -14,20 +17,18 @@ PauseIntent pause the music
 
 VolumeUpIntent turn it up
 VolumeUpIntent turn the volume up
-VolumeUpIntent louder
-VolumeUpIntent volume up
+VolumeUpIntent turn up the volume
+VolumeUpIntent raise the volume
 
 VolumeDownIntent turn it down
 VolumeDownIntent turn the volume down
-VolumeDownIntent softer
-VolumeDownIntent quieter
-VolumeDownIntent volume down
+VolumeDownIntent turn down the volume
+VolumeDownIntent lower the volume
 
 NextTrackIntent go to next track
 NextTrackIntent skip to next track
 NextTrackIntent skip
 NextTrackIntent skip song
-NextTrackIntent next
 NextTrackIntent next track
 NextTrackIntent next song
 NextTrackIntent skip this track
@@ -36,15 +37,11 @@ NextTrackIntent skip this song
 PreviousTrackIntent go to previous track
 PreviousTrackIntent go to the last song
 PreviousTrackIntent go back
-PreviousTrackIntent last track
-PreviousTrackIntent last song
 PreviousTrackIntent previous track
 PreviousTrackIntent previous song
 
-WhatsPlayingIntent what's playing
-WhatsPlayingIntent what's this
-WhatsPlayingIntent what is this
-WhatsPlayingIntent what song is this
-WhatsPlayingIntent what band is this
-WhatsPlayingIntent who is this
-WhatsPlayingIntent what am i hearing
+WhatsPlayingIntent check what's playing
+WhatsPlayingIntent check what song is this
+WhatsPlayingIntent check what band is this
+WhatsPlayingIntent check who is this
+WhatsPlayingIntent check what am i hearing

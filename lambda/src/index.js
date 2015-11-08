@@ -29,7 +29,7 @@ EchoSonos.prototype.intentHandlers = {
     // register custom intent handlers
     PlayIntent: function (intent, session, response) {
         console.log("PlayIntent received");
-        options.path = '/preset/'+encodeURIComponent(intent.slots.Preset.value);
+        options.path = '/preset/'+encodeURIComponent(intent.slots.Preset.value.toLowerCase());
         httpreq(options, response, "Playing " + intent.slots.Preset.value);
     },
     PlaySpecificIntent: function (intent, session, response) {
@@ -46,6 +46,11 @@ EchoSonos.prototype.intentHandlers = {
         console.log("PauseIntent received");
         options.path = '/pauseall';
         httpreq(options, response, "Pausing");
+    },
+    ResumeIntent: function (intent, session, response) {
+        console.log("ResumeIntent received");
+        options.path = '/resumeall';
+        httpreq(options, response, "Resuming");
     },
     VolumeDownIntent: function (intent, session, response) {
         console.log("VolumeDownIntent received");
