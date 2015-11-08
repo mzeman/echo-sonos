@@ -3,6 +3,7 @@
 var http = require('http');
 
 var options = require('./options');
+var optionsh = require('./optionsh');
 
 var AlexaSkill = require('./AlexaSkill');
 var EchoSonos = function () {
@@ -32,10 +33,10 @@ EchoSonos.prototype.intentHandlers = {
         options.path = '/preset/'+encodeURIComponent(intent.slots.Preset.value.toLowerCase());
         httpreq(options, response, "Playing " + intent.slots.Preset.value);
     },
-    PlaySpecificIntent: function (intent, session, response) {
-        console.log("PlaySpecificIntent received");
-        options.path = '/specific/'+encodeURIComponent(intent.slots.Preset.value);
-        httpreq(options, response, "Playing " + intent.slots.Preset.value);
+    PlayLikeIntent: function (intent, session, response) {
+        console.log("PlayLikeIntent received");
+        optionsh.path = '/like/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Music.value);
+        httpreq(optionsh, response, "Playing " + intent.slots.Music.value);
     },
     SayIntent: function (intent, session, response) {
         console.log("SayIntent received");
