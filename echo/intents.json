@@ -10,7 +10,20 @@
       ]
     },
     {
-     "intent": "PlaySpecificIntent",
+     "intent": "PlayLikeIntent",
+     "slots": [
+        {
+          "name": "Music",
+          "type": "SongTitle"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "EnqueueLikeIntent",
      "slots": [
         {
           "name": "Music",

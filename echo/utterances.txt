@@ -1,6 +1,7 @@
 PlayIntent play {Preset}
 
-PlaySpecificIntent play specific {Music} in {Room}
+PlayLikeIntent play like {Music} in {Room}
+EnqueueLikeIntent queue like {Music} in {Room}
 
 SayIntent say {Say} in {Room}
 SayIntent say {Say} in the {Room}
