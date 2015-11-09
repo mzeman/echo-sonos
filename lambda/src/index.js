@@ -35,8 +35,13 @@ EchoSonos.prototype.intentHandlers = {
     },
     PlayLikeIntent: function (intent, session, response) {
         console.log("PlayLikeIntent received");
-        optionsh.path = '/like/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Music.value);
+        optionsh.path = '/like/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Music.value);
         httpreq(optionsh, response, "Playing " + intent.slots.Music.value);
+    },
+    EnqueueLikeIntent: function (intent, session, response) {
+        console.log("EnqueueLikeIntent received");
+        optionsh.path = '/like/enqueue/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Music.value);
+        httpreq(optionsh, response, "Enqueue " + intent.slots.Music.value);
     },
     SayIntent: function (intent, session, response) {
         console.log("SayIntent received");
