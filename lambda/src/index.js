@@ -43,11 +43,47 @@ EchoSonos.prototype.intentHandlers = {
         optionsh.path = '/like/enqueue/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Music.value);
         httpreq(optionsh, response, "Enqueue " + intent.slots.Music.value);
     },
+    PlayArtistLikeIntent: function (intent, session, response) {
+        console.log("PlayArtistLikeIntent received");
+        optionsh.path = '/likeArtist/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Artist.value);
+        httpreq(optionsh, response, "Playing " + intent.slots.Artist.value);
+    },
+    PandoraPlayIntent: function (intent, session, response) {
+        console.log("PandoraPlayIntent received");
+        optionsh.path = '/pandora/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Artist.value);
+        httpreq(optionsh, response, "Playing Radio " + intent.slots.Artist.value);
+    },
+    EnqueueArtistLikeIntent: function (intent, session, response) {
+        console.log("EnqueueArtistLikeIntent received");
+        optionsh.path = '/likeArtist/enqueue/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Artist.value);
+        httpreq(optionsh, response, "Enqueue " + intent.slots.Artist.value);
+    },
+    GroupIntent: function (intent, session, response) {
+        console.log("GroupIntent received");
+        optionsh.path = '/join/'+encodeURIComponent(intent.slots.RoomA.value)+'/'+encodeURIComponent(intent.slots.RoomB.value);
+        httpreq(optionsh, response, "Joining " + intent.slots.RoomA.value + " and " + intent.slots.RoomB.value);
+    },
+    UnGroupIntent: function (intent, session, response) {
+        console.log("UnGroupIntent received");
+        optionsh.path = '/unjoin/'+encodeURIComponent(intent.slots.Room.value);
+        httpreq(optionsh, response, "Un Joining " + intent.slots.Room.value);
+    },
     SayIntent: function (intent, session, response) {
         console.log("SayIntent received");
         options.path = '/'+encodeURIComponent(intent.slots.Room.value)+'/say/'+encodeURIComponent(intent.slots.Say.value);
         httpreq(options, response, "Saying " + intent.slots.Say.value);
     },
+    NextTrackIntent: function (intent, session, response) {
+        console.log("NextTrackIntent received");
+        optionsh.path = '/next/'+encodeURIComponent(intent.slots.Room.value);
+        httpreq(optionsh, response, "Next Track in " + intent.slots.Room.value);
+    },
+    PreviousTrackIntent: function (intent, session, response) {
+        console.log("PreviousTrackIntent received");
+        optionsh.path = '/prev/'+encodeURIComponent(intent.slots.Room.value);
+        httpreq(optionsh, response, "Previous Track in " + intent.slots.Room.value);
+    },
+
     PauseIntent: function (intent, session, response) {
         console.log("PauseIntent received");
         options.path = '/pauseall';
@@ -68,15 +104,15 @@ EchoSonos.prototype.intentHandlers = {
         options.path = '/groupVolume/+10';
         httpreq(options, response, "OK");
     },
-    NextTrackIntent: function (intent, session, response) {
-        console.log("NextTrackIntent received");
-        skipHttpreq(options, response);
-    },
-    PreviousTrackIntent: function (intent, session, response) {
-        console.log("PreviousTrackIntent received");
-        options.path = '/previous';
-        httpreq(options, response, "OK");
-    },
+//    NextTrackIntent: function (intent, session, response) {
+//        console.log("NextTrackIntent received");
+//        skipHttpreq(options, response);
+//    },
+//    PreviousTrackIntent: function (intent, session, response) {
+//        console.log("PreviousTrackIntent received");
+//        options.path = '/previous';
+//        httpreq(options, response, "OK");
+//    },
     WhatsPlayingIntent: function (intent, session, response) {
         console.log("WhatsPlayingIntent received");
         options.path = '/state';
