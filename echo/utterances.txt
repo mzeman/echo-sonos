@@ -1,10 +1,41 @@
 PlayIntent play {Preset}
 
 PlayLikeIntent play like {Music} in {Room}
+PlayLikeIntent play a track like {Music} in the {Room}
+PlayLikeIntent play a song like {Music} in the {Room}
+
+PlayLikeIntent play a song in the {Room} like {Music}
+PlayLikeIntent play a track in the {Room} like {Music}
+
 EnqueueLikeIntent queue like {Music} in {Room}
+EnqueueLikeIntent queue a track like {Music} in {Room}
+EnqueueLikeIntent queue a song like {Music} in {Room}
+
+PandoraPlayIntent use radio to play {Artist} in the {Room}
+PandoraPlayIntent tell pandora to play {Artist} in the {Room}
+
+
+PlayArtistLikeIntent play artist like {Artist} in {Room}
+PlayArtistLikeIntent play an artist like {Artist} in the {Room}
+PlayArtistLikeIntent play an artist like {Artist} in the {Room}
+
+PlayArtistLikeIntent play an artist in the {Room} like {Artist}
+PlayArtistLikeIntent play an artist in the {Room} like {Artist}
+
+EnqueueArtistLikeIntent queue artist like {Artist} in {Room}
+EnqueueArtistLikeIntent queue an artist like {Artist} in {Room}
+EnqueueArtistLikeIntent queue an artist like {Artist} in {Room}
+
 
 SayIntent say {Say} in {Room}
 SayIntent say {Say} in the {Room}
+
+GroupIntent join {RoomA} and {RoomB}
+GroupIntent group {RoomA} and {RoomB}
+
+UnGroupIntent unjoin {Room}
+UnGroupIntent ungroup {Room}
+UnGroupIntent remove {Room} from group
 
 ResumeIntent resume
 ResumeIntent continue
@@ -26,20 +57,20 @@ VolumeDownIntent turn the volume down
 VolumeDownIntent turn down the volume
 VolumeDownIntent lower the volume
 
-NextTrackIntent go to next track
-NextTrackIntent skip to next track
-NextTrackIntent skip
-NextTrackIntent skip song
-NextTrackIntent next track
-NextTrackIntent next song
-NextTrackIntent skip this track
-NextTrackIntent skip this song
+NextTrackIntent go to next track in {Room}
+NextTrackIntent skip to next track in {Room}
+NextTrackIntent skip in {Room}
+NextTrackIntent skip song in {Room}
+NextTrackIntent next track in {Room}
+NextTrackIntent next song in {Room}
+NextTrackIntent skip this track in {Room}
+NextTrackIntent skip this song in {Room}
 
-PreviousTrackIntent go to previous track
-PreviousTrackIntent go to the last song
-PreviousTrackIntent go back
-PreviousTrackIntent previous track
-PreviousTrackIntent previous song
+PreviousTrackIntent go to previous track in {Room}
+PreviousTrackIntent go to the last song in {Room}
+PreviousTrackIntent go back in {Room}
+PreviousTrackIntent previous track in {Room}
+PreviousTrackIntent previous song in {Room}
 
 WhatsPlayingIntent check what's playing
 WhatsPlayingIntent check what song is this

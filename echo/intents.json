@@ -5,7 +5,7 @@
      "slots": [
         {
           "name": "Preset",
-          "type": "LITERAL"
+          "type": "Words"
         }
       ]
     },
@@ -36,6 +36,67 @@
       ]
     },
     {
+     "intent": "PlayArtistLikeIntent",
+     "slots": [
+        {
+          "name": "Artist",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "EnqueueArtistLikeIntent",
+     "slots": [
+        {
+          "name": "Artist",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "PandoraPlayIntent",
+     "slots": [
+        {
+          "name": "Artist",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "GroupIntent",
+     "slots": [
+        {
+          "name": "RoomA",
+          "type": "Zone"
+        },
+        {
+          "name": "RoomB",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "UnGroupIntent",
+     "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
      "intent": "SayIntent",
      "slots": [
         {
@@ -52,7 +113,7 @@
       "intent": "PauseIntent",
       "slots": []
     },
-    {
+      {
       "intent": "ResumeIntent",
       "slots": []
     },
@@ -66,11 +127,21 @@
     },
     {
       "intent": "NextTrackIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
     },
     {
       "intent": "PreviousTrackIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
     },
     {
       "intent": "WhatsPlayingIntent",
