@@ -51,7 +51,17 @@ EchoSonos.prototype.intentHandlers = {
     PandoraPlayIntent: function (intent, session, response) {
         console.log("PandoraPlayIntent received");
         optionsh.path = '/pandora/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Artist.value);
-        httpreq(optionsh, response, "Playing Radio " + intent.slots.Artist.value);
+        httpreq(optionsh, response, "Playing Pandora Radio for query " + intent.slots.Artist.value);
+    },
+    SongzaPlayIntent: function (intent, session, response) {
+        console.log("SongzaPlayIntent received");
+        optionsh.path = '/songza/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Artist.value);
+        httpreq(optionsh, response, "Playing Songza Radio for query " + intent.slots.Artist.value);
+    },
+    RadioPlayIntent: function (intent, session, response) {
+        console.log("RadioPlayIntent received");
+        optionsh.path = '/'+encodeURIComponent(intent.slots.RadioType.value)+'/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Artist.value);
+        httpreq(optionsh, response, "Playing " + intent.slots.RadioType.value + " radio for query " + intent.slots.Artist.value);
     },
     EnqueueArtistLikeIntent: function (intent, session, response) {
         console.log("EnqueueArtistLikeIntent received");
@@ -68,22 +78,26 @@ EchoSonos.prototype.intentHandlers = {
         optionsh.path = '/unjoin/'+encodeURIComponent(intent.slots.Room.value);
         httpreq(optionsh, response, "Un Joining " + intent.slots.Room.value);
     },
+    NextTrackIntent: function (intent, session, response) {
+        console.log("NextTrackIntent received");
+        skipHttpreq(optionsh, intent.slots.Room.value, response);
+    },
+    PreviousTrackIntent: function (intent, session, response) {
+        console.log("PreviousTrackIntent received");
+        optionsh.path = '/previous/'+encodeURIComponent(intent.slots.Room.value);
+        httpreq(optionsh, response, "Previous Track in " + intent.slots.Room.value);
+    },
+    WhatsPlayingIntent: function (intent, session, response) {
+        console.log("WhatsPlayingIntent received");
+        optionsh.path = '/state/'+encodeURIComponent(intent.slots.Room.value);
+        stateHttpreq(optionsh, response);
+    },
+
     SayIntent: function (intent, session, response) {
         console.log("SayIntent received");
         options.path = '/'+encodeURIComponent(intent.slots.Room.value)+'/say/'+encodeURIComponent(intent.slots.Say.value);
         httpreq(options, response, "Saying " + intent.slots.Say.value);
     },
-    NextTrackIntent: function (intent, session, response) {
-        console.log("NextTrackIntent received");
-        optionsh.path = '/next/'+encodeURIComponent(intent.slots.Room.value);
-        httpreq(optionsh, response, "Next Track in " + intent.slots.Room.value);
-    },
-    PreviousTrackIntent: function (intent, session, response) {
-        console.log("PreviousTrackIntent received");
-        optionsh.path = '/prev/'+encodeURIComponent(intent.slots.Room.value);
-        httpreq(optionsh, response, "Previous Track in " + intent.slots.Room.value);
-    },
-
     PauseIntent: function (intent, session, response) {
         console.log("PauseIntent received");
         options.path = '/pauseall';
@@ -103,7 +117,7 @@ EchoSonos.prototype.intentHandlers = {
         console.log("VolumeUpIntent received");
         options.path = '/groupVolume/+10';
         httpreq(options, response, "OK");
-    },
+    }
 //    NextTrackIntent: function (intent, session, response) {
 //        console.log("NextTrackIntent received");
 //        skipHttpreq(options, response);
@@ -113,11 +127,11 @@ EchoSonos.prototype.intentHandlers = {
 //        options.path = '/previous';
 //        httpreq(options, response, "OK");
 //    },
-    WhatsPlayingIntent: function (intent, session, response) {
-        console.log("WhatsPlayingIntent received");
-        options.path = '/state';
-        stateHttpreq(options, response);
-    }
+//    WhatsPlayingIntent: function (intent, session, response) {
+//        console.log("WhatsPlayingIntent received");
+//        options.path = '/state';
+//        stateHttpreq(options, response);
+//    }
 };
 
 // Create the handler that responds to the Alexa Request.
@@ -153,8 +167,8 @@ function stateHttpreq(options, alexaResponse) {
   }).end();
 }
 
-function skipHttpreq(options, alexaResponse) {
-    options.path = "/state";
+function skipHttpreq(options, room, alexaResponse) {
+    options.path = '/state/'+encodeURIComponent(room);
     http.request(options, function(httpResponse) {
         var body = '';
         httpResponse.on('data', function(data) {
@@ -163,7 +177,7 @@ function skipHttpreq(options, alexaResponse) {
         httpResponse.on('end', function() {
             var currentState = JSON.parse(body);
             console.log("response1: " + body)
-            options.path = "/next";
+            options.path = '/next/'+encodeURIComponent(room);
             http.request(options, function(httpResponse2) {
                 console.log("response2: " + httpResponse2)
                 if (currentState.currentTrack) {
