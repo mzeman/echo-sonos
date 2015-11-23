@@ -38,15 +38,27 @@ PauseIntent stop
 PauseIntent stop the music
 PauseIntent pause the music
 
-VolumeUpIntent turn it up
-VolumeUpIntent turn the volume up
-VolumeUpIntent turn up the volume
-VolumeUpIntent raise the volume
+VolumeUpIntent turn it up {Volume} in the {Room}
+VolumeUpIntent turn the volume up {Volume} in the {Room}
+VolumeUpIntent turn up the volume {Volume} in the {Room}
+VolumeUpIntent raise the volume {Volume} in the {Room}
 
-VolumeDownIntent turn it down
-VolumeDownIntent turn the volume down
-VolumeDownIntent turn down the volume
-VolumeDownIntent lower the volume
+VolumeDownIntent turn it down {Volume} in the {Room}
+VolumeDownIntent turn the volume down {Volume} in the {Room}
+VolumeDownIntent turn down the volume {Volume} in the {Room}
+VolumeDownIntent lower the volume {Volume} in the {Room}
+
+VolumeSetIntent set volume to {Volume} in the {Room}
+
+
+VolumeDownSpecificIntent turn speaker {Room} down {Volume}
+VolumeDownSpecificIntent turn speaker {Room} volume down {Volume}
+
+VolumeSetSpecificIntent set speaker volume to {Volume} in the {Room}
+
+VolumeUpSpecificIntent turn speaker {Room} up {Volume}
+VolumeUpSpecificIntent turn speaker {Room} volume up {Volume}
+
 
 NextTrackIntent go to next track in {Room}
 NextTrackIntent skip to next track in {Room}

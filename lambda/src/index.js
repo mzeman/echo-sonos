@@ -92,32 +92,72 @@ EchoSonos.prototype.intentHandlers = {
         optionsh.path = '/state/'+encodeURIComponent(intent.slots.Room.value);
         stateHttpreq(optionsh, response);
     },
+    PauseIntent: function (intent, session, response) {
+        console.log("PauseIntent received");
+        optionsh.path = '/pause/'+encodeURIComponent(intent.slots.Room.value);
+        httpreq(optionsh, response, "Pausing " + intent.slots.Room.value);
+    },
+    ResumeIntent: function (intent, session, response) {
+        console.log("ResumeIntent received");
+        optionsh.path = '/play/'+encodeURIComponent(intent.slots.Room.value);
+        httpreq(optionsh, response, "Playing " + intent.slots.Room.value);
+    },
 
     SayIntent: function (intent, session, response) {
         console.log("SayIntent received");
         options.path = '/'+encodeURIComponent(intent.slots.Room.value)+'/say/'+encodeURIComponent(intent.slots.Say.value);
         httpreq(options, response, "Saying " + intent.slots.Say.value);
     },
-    PauseIntent: function (intent, session, response) {
-        console.log("PauseIntent received");
-        options.path = '/pauseall';
-        httpreq(options, response, "Pausing");
-    },
-    ResumeIntent: function (intent, session, response) {
-        console.log("ResumeIntent received");
-        options.path = '/resumeall';
-        httpreq(options, response, "Resuming");
-    },
-    VolumeDownIntent: function (intent, session, response) {
-        console.log("VolumeDownIntent received");
-        options.path = '/groupVolume/-10';
+    VolumeSetIntent: function (intent, session, response) {
+        console.log("VolumeSetIntent received");
+        options.path = '/groupVolume/'+encodeURIComponent(intent.slots.Room.value)+'/=/'+encodeURIComponent(intent.slots.Volume.value);
         httpreq(options, response, "OK");
     },
     VolumeUpIntent: function (intent, session, response) {
         console.log("VolumeUpIntent received");
-        options.path = '/groupVolume/+10';
+        options.path = '/groupVolume/'+encodeURIComponent(intent.slots.Room.value)+'/+/'+encodeURIComponent(intent.slots.Volume.value);
+        httpreq(options, response, "OK");
+    },
+    VolumeDownIntent: function (intent, session, response) {
+        console.log("VolumeDownIntent received");
+        options.path = '/groupVolume/'+encodeURIComponent(intent.slots.Room.value)+'/-/'+encodeURIComponent(intent.slots.Volume.value);
         httpreq(options, response, "OK");
     }
+    VolumeSetSpecificIntent: function (intent, session, response) {
+        console.log("VolumeSetSpecificIntent received");
+        options.path = '/volume/'+encodeURIComponent(intent.slots.Room.value)+'/=/'+encodeURIComponent(intent.slots.Volume.value);
+        httpreq(options, response, "OK");
+    },
+    VolumeSpecificUpIntent: function (intent, session, response) {
+        console.log("VolumeUpSpecificIntent received");
+        options.path = '/volume/'+encodeURIComponent(intent.slots.Room.value)+'/+/'+encodeURIComponent(intent.slots.Volume.value);
+        httpreq(options, response, "OK");
+    },
+    VolumeDownSpecificIntent: function (intent, session, response) {
+        console.log("VolumeDownSpecificIntent received");
+        options.path = '/volume/'+encodeURIComponent(intent.slots.Room.value)+'/-/'+encodeURIComponent(intent.slots.Volume.value);
+        httpreq(options, response, "OK");
+    }
+//    PauseIntent: function (intent, session, response) {
+//        console.log("PauseIntent received");
+//        options.path = '/pauseall';
+//        httpreq(options, response, "Pausing");
+//    },
+//    ResumeIntent: function (intent, session, response) {
+//        console.log("ResumeIntent received");
+//        options.path = '/resumeall';
+//        httpreq(options, response, "Resuming");
+//    },
+//    VolumeDownIntent: function (intent, session, response) {
+//        console.log("VolumeDownIntent received");
+//        options.path = '/groupVolume/-10';
+//        httpreq(options, response, "OK");
+//    },
+//    VolumeUpIntent: function (intent, session, response) {
+//        console.log("VolumeUpIntent received");
+//        options.path = '/groupVolume/+10';
+//        httpreq(options, response, "OK");
+//    }
 //    NextTrackIntent: function (intent, session, response) {
 //        console.log("NextTrackIntent received");
 //        skipHttpreq(options, response);

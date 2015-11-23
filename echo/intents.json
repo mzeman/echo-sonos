@@ -113,12 +113,82 @@
       "slots": []
     },
     {
+      "intent": "VolumeSetIntent",
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
       "intent": "VolumeDownIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
     },
     {
       "intent": "VolumeUpIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "VolumeSetSpecificIntent",
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "VolumeDownSpecificIntent",
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "VolumeUpSpecificIntent",
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
     },
     {
       "intent": "NextTrackIntent",
