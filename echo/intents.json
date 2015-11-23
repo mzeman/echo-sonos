@@ -1,41 +1,6 @@
 {
   "intents": [
     {
-     "intent": "PlayIntent",
-     "slots": [
-        {
-          "name": "Preset",
-          "type": "Words"
-        }
-      ]
-    },
-    {
-     "intent": "PlayLikeIntent",
-     "slots": [
-        {
-          "name": "Music",
-          "type": "SongTitle"
-        },
-        {
-          "name": "Room",
-          "type": "Zone"
-        }
-      ]
-    },
-    {
-     "intent": "EnqueueLikeIntent",
-     "slots": [
-        {
-          "name": "Music",
-          "type": "SongTitle"
-        },
-        {
-          "name": "Room",
-          "type": "Zone"
-        }
-      ]
-    },
-    {
      "intent": "PlayArtistLikeIntent",
      "slots": [
         {
@@ -64,6 +29,36 @@
     {
      "intent": "PandoraPlayIntent",
      "slots": [
+        {
+          "name": "Artist",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "SongzaPlayIntent",
+     "slots": [
+        {
+          "name": "Artist",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "RadioPlayIntent",
+     "slots": [
+        {
+          "name": "RadioType",
+          "type": "Radio"
+        },
         {
           "name": "Artist",
           "type": "ArtistName"
@@ -145,7 +140,12 @@
     },
     {
       "intent": "WhatsPlayingIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
     }
   ]
 }
