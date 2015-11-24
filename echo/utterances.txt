@@ -1,10 +1,10 @@
-PandoraPlayIntent use radio to play {Artist} in the {Room}
-PandoraPlayIntent tell pandora to play {Artist} in the {Room}
+PandoraPlayIntent use pandora to play {Artist} in the {Room}
 
-SongzaPlayIntent play {Artist} with songza in the {Room}
-SongzaPlayIntent play {Artist} using songza in the {Room}
+SongzaPlayIntent im in the mood for {Artist} in the {Room}
 
 RadioPlayIntent radio {RadioType} to play {Artist} in the {Room}
+
+FavoriteIntent select favorite {Like} in the {Room}
 
 PlayArtistLikeIntent play artist like {Artist} in {Room}
 PlayArtistLikeIntent play an artist like {Artist} in the {Room}
@@ -28,15 +28,15 @@ UnGroupIntent unjoin {Room}
 UnGroupIntent ungroup {Room}
 UnGroupIntent remove {Room} from group
 
-ResumeIntent resume
-ResumeIntent continue
-ResumeIntent continue the music
-ResumeIntent resume the music
+ResumeIntent resume {Room}
+ResumeIntent continue in the {Room}
+ResumeIntent continue the music in {Room}
+ResumeIntent resume the music in {Room}
 
-PauseIntent pause
-PauseIntent stop
-PauseIntent stop the music
-PauseIntent pause the music
+PauseIntent pause {Room}
+PauseIntent stop in the {Room}
+PauseIntent stop the music in {Room}
+PauseIntent pause the music in {Room}
 
 VolumeUpIntent turn it up {Volume} in the {Room}
 VolumeUpIntent turn the volume up {Volume} in the {Room}

@@ -70,6 +70,19 @@
       ]
     },
     {
+     "intent": "FavoriteIntent",
+     "slots": [
+        {
+          "name": "Like",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
      "intent": "GroupIntent",
      "slots": [
         {
@@ -106,11 +119,21 @@
     },
     {
       "intent": "PauseIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
     },
       {
       "intent": "ResumeIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
     },
     {
       "intent": "VolumeSetIntent",
