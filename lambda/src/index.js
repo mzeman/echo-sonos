@@ -132,6 +132,11 @@ EchoSonos.prototype.intentHandlers = {
         optionsh.path = '/volume/'+encodeURIComponent(intent.slots.Room.value)+'/-/'+encodeURIComponent(intent.slots.Volume.value);
         httpreq(optionsh, response, "OK");
     },
+    FavoriteIntent: function (intent, session, response) {
+        console.log("FavoriteIntent received");
+        optionsh.path = '/play/favorite/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Like.value);
+        httpreq(optionsh, response, "OK");
+    },
 
     SayIntent: function (intent, session, response) {
         console.log("SayIntent received");
