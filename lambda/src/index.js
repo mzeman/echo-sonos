@@ -102,6 +102,11 @@ EchoSonos.prototype.intentHandlers = {
         optionsh.path = '/play/'+encodeURIComponent(intent.slots.Room.value);
         httpreq(optionsh, response, "Playing " + intent.slots.Room.value);
     },
+    PauseAllIntent: function (intent, session, response) {
+        console.log("PauseAllIntent received");
+        optionsh.path = '/pauseall');
+        httpreq(optionsh, response, "Pausing all");
+    },
     VolumeSetIntent: function (intent, session, response) {
         console.log("VolumeSetIntent received");
         optionsh.path = '/groupVolume/'+encodeURIComponent(intent.slots.Room.value)+'/=/'+encodeURIComponent(intent.slots.Volume.value);
