@@ -122,7 +122,7 @@ EchoSonos.prototype.intentHandlers = {
         optionsh.path = '/volume/'+encodeURIComponent(intent.slots.Room.value)+'/=/'+encodeURIComponent(intent.slots.Volume.value);
         httpreq(optionsh, response, "OK");
     },
-    VolumeSpecificUpIntent: function (intent, session, response) {
+    VolumeUpSpecificIntent: function (intent, session, response) {
         console.log("VolumeUpSpecificIntent received");
         optionsh.path = '/volume/'+encodeURIComponent(intent.slots.Room.value)+'/+/'+encodeURIComponent(intent.slots.Volume.value);
         httpreq(optionsh, response, "OK");
