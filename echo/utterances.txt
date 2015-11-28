@@ -18,9 +18,6 @@ EnqueueArtistLikeIntent queue an artist like {Artist} in {Room}
 EnqueueArtistLikeIntent queue an artist like {Artist} in {Room}
 
 
-SayIntent say {Say} in {Room}
-SayIntent say {Say} in the {Room}
-
 GroupIntent join {RoomA} and {RoomB}
 GroupIntent group {RoomA} and {RoomB}
 
@@ -37,6 +34,10 @@ PauseIntent pause {Room}
 PauseIntent stop in the {Room}
 PauseIntent stop the music in {Room}
 PauseIntent pause the music in {Room}
+
+PauseAllIntent pause all rooms
+PauseAllIntent pause all music
+PauseAllIntent stop all music
 
 VolumeUpIntent turn it up {Volume} in the {Room}
 VolumeUpIntent turn the volume up {Volume} in the {Room}

@@ -105,17 +105,8 @@
       ]
     },
     {
-     "intent": "SayIntent",
-     "slots": [
-        {
-          "name": "Say",
-          "type": "Words"
-        },
-        {
-          "name": "Room",
-          "type": "Zone"
-        }
-      ]
+      "intent": "PauseAllIntent",
+      "slots": []
     },
     {
       "intent": "PauseIntent",
@@ -126,7 +117,7 @@
         }
       ]
     },
-      {
+    {
       "intent": "ResumeIntent",
       "slots": [
         {
@@ -242,3 +233,4 @@
     }
   ]
 }
+
