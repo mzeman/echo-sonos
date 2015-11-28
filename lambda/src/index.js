@@ -48,6 +48,16 @@ EchoSonos.prototype.intentHandlers = {
         optionsh.path = '/likeArtist/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Artist.value);
         httpreq(optionsh, response, "Playing " + intent.slots.Artist.value);
     },
+    PlayAlbumLikeIntent: function (intent, session, response) {
+        console.log("PlayAlbumLikeIntent received");
+        optionsh.path = '/likeAlbum/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Album.value);
+        httpreq(optionsh, response, "Playing " + intent.slots.Album.value);
+    },
+    PlayTrackLikeIntent: function (intent, session, response) {
+        console.log("PlayTrackLikeIntent received");
+        optionsh.path = '/likeTrack/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Track.value);
+        httpreq(optionsh, response, "Playing " + intent.slots.Track.value);
+    },
     PandoraPlayIntent: function (intent, session, response) {
         console.log("PandoraPlayIntent received");
         optionsh.path = '/pandora/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Artist.value);
