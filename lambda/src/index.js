@@ -60,7 +60,7 @@ EchoSonos.prototype.intentHandlers = {
     },
     RadioPlayIntent: function (intent, session, response) {
         console.log("RadioPlayIntent received");
-        optionsh.path = '/'+encodeURIComponent(intent.slots.RadioType.value)+'/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Artist.value);
+        optionsh.path = '/radio/'+encodeURIComponent(intent.slots.RadioType.value)+'/play/'+encodeURIComponent(intent.slots.Room.value)+'/'+encodeURIComponent(intent.slots.Artist.value);
         httpreq(optionsh, response, "Playing " + intent.slots.RadioType.value + " radio for query " + intent.slots.Artist.value);
     },
     EnqueueArtistLikeIntent: function (intent, session, response) {
