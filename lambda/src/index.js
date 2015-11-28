@@ -104,7 +104,7 @@ EchoSonos.prototype.intentHandlers = {
     },
     PauseAllIntent: function (intent, session, response) {
         console.log("PauseAllIntent received");
-        optionsh.path = '/pauseall');
+        optionsh.path = '/pauseall';
         httpreq(optionsh, response, "Pausing all");
     },
     VolumeSetIntent: function (intent, session, response) {
