@@ -102,6 +102,11 @@ EchoSonos.prototype.intentHandlers = {
         optionsh.path = '/state/'+encodeURIComponent(intent.slots.Room.value);
         stateHttpreq(optionsh, response);
     },
+    SpeakerInfoIntent: function (intent, session, response) {
+        console.log("SpeakerInfoIntent received");
+        optionsh.path = '/info/'+encodeURIComponent(intent.slots.Room.value);
+        infoHttpreq(optionsh, response);
+    },
     PauseIntent: function (intent, session, response) {
         console.log("PauseIntent received");
         optionsh.path = '/pause/'+encodeURIComponent(intent.slots.Room.value);
@@ -211,6 +216,19 @@ function httpreq(options, alexaResponse, responseText) {
   }).end();
 }
 
+function infoHttpreq(options, alexaResponse) {
+    http.request(options, function(httpResponse) {
+        var body = '';
+        httpResponse.on('data', function(data) {
+            body += data;
+        });
+        httpResponse.on('end', function() {
+            var currentState = JSON.parse(body);
+            console.log("response: " + body)
+            alexaResponse.tell(currentState.outputSpeech);
+        });
+  }).end();
+}
 function stateHttpreq(options, alexaResponse) {
     http.request(options, function(httpResponse) {
         var body = '';
