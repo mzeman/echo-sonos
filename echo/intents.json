@@ -1,37 +1,236 @@
 {
   "intents": [
     {
-     "intent": "PlayIntent",
+     "intent": "PlayArtistLikeIntent",
      "slots": [
         {
-          "name": "Preset",
-          "type": "LITERAL"
+          "name": "Artist",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
         }
       ]
     },
     {
-      "intent": "PauseIntent",
+     "intent": "EnqueueArtistLikeIntent",
+     "slots": [
+        {
+          "name": "Artist",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "PandoraPlayIntent",
+     "slots": [
+        {
+          "name": "Artist",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "SongzaPlayIntent",
+     "slots": [
+        {
+          "name": "Artist",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "RadioPlayIntent",
+     "slots": [
+        {
+          "name": "RadioType",
+          "type": "Radio"
+        },
+        {
+          "name": "Artist",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "FavoriteIntent",
+     "slots": [
+        {
+          "name": "Like",
+          "type": "ArtistName"
+        },
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "GroupIntent",
+     "slots": [
+        {
+          "name": "RoomA",
+          "type": "Zone"
+        },
+        {
+          "name": "RoomB",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+     "intent": "UnGroupIntent",
+     "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+      "intent": "PauseAllIntent",
       "slots": []
+    },
+    {
+      "intent": "PauseIntent",
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+      "intent": "ResumeIntent",
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
+    },
+    {
+      "intent": "VolumeSetIntent",
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
     },
     {
       "intent": "VolumeDownIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
     },
     {
       "intent": "VolumeUpIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "VolumeSetSpecificIntent",
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "VolumeDownSpecificIntent",
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "VolumeUpSpecificIntent",
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        },
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
     },
     {
       "intent": "NextTrackIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
     },
     {
       "intent": "PreviousTrackIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
     },
     {
       "intent": "WhatsPlayingIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "Room",
+          "type": "Zone"
+        }
+      ]
     }
   ]
 }
+

@@ -1,46 +1,83 @@
-PlayIntent play {test|Preset}
-PlayIntent play {rock|Preset}
-PlayIntent play {rap|Preset}
-PlayIntent play {pop rap|Preset}
+PandoraPlayIntent use pandora to play {Artist} in the {Room}
 
-PauseIntent pause
-PauseIntent stop
-PauseIntent stop the music
-PauseIntent pause the music
+SongzaPlayIntent im in the mood for {Artist} in the {Room}
 
-VolumeUpIntent turn it up
-VolumeUpIntent turn the volume up
-VolumeUpIntent louder
-VolumeUpIntent volume up
+RadioPlayIntent radio {RadioType} to play {Artist} in the {Room}
 
-VolumeDownIntent turn it down
-VolumeDownIntent turn the volume down
-VolumeDownIntent softer
-VolumeDownIntent quieter
-VolumeDownIntent volume down
+FavoriteIntent select favorite {Like} in the {Room}
 
-NextTrackIntent go to next track
-NextTrackIntent skip to next track
-NextTrackIntent skip
-NextTrackIntent skip song
-NextTrackIntent next
-NextTrackIntent next track
-NextTrackIntent next song
-NextTrackIntent skip this track
-NextTrackIntent skip this song
+PlayArtistLikeIntent play artist like {Artist} in {Room}
+PlayArtistLikeIntent play an artist like {Artist} in the {Room}
+PlayArtistLikeIntent play an artist like {Artist} in the {Room}
 
-PreviousTrackIntent go to previous track
-PreviousTrackIntent go to the last song
-PreviousTrackIntent go back
-PreviousTrackIntent last track
-PreviousTrackIntent last song
-PreviousTrackIntent previous track
-PreviousTrackIntent previous song
+PlayArtistLikeIntent play an artist in the {Room} like {Artist}
+PlayArtistLikeIntent play an artist in the {Room} like {Artist}
 
-WhatsPlayingIntent what's playing
-WhatsPlayingIntent what's this
-WhatsPlayingIntent what is this
-WhatsPlayingIntent what song is this
-WhatsPlayingIntent what band is this
-WhatsPlayingIntent who is this
-WhatsPlayingIntent what am i hearing
+EnqueueArtistLikeIntent queue artist like {Artist} in {Room}
+EnqueueArtistLikeIntent queue an artist like {Artist} in {Room}
+EnqueueArtistLikeIntent queue an artist like {Artist} in {Room}
+
+
+GroupIntent join {RoomA} and {RoomB}
+GroupIntent group {RoomA} and {RoomB}
+
+UnGroupIntent unjoin {Room}
+UnGroupIntent ungroup {Room}
+UnGroupIntent remove {Room} from group
+
+ResumeIntent resume {Room}
+ResumeIntent continue in the {Room}
+ResumeIntent continue the music in {Room}
+ResumeIntent resume the music in {Room}
+
+PauseIntent pause {Room}
+PauseIntent stop in the {Room}
+PauseIntent stop the music in {Room}
+PauseIntent pause the music in {Room}
+
+PauseAllIntent pause all rooms
+PauseAllIntent pause all music
+PauseAllIntent stop all music
+
+VolumeUpIntent turn it up {Volume} in the {Room}
+VolumeUpIntent turn the volume up {Volume} in the {Room}
+VolumeUpIntent turn up the volume {Volume} in the {Room}
+VolumeUpIntent raise the volume {Volume} in the {Room}
+
+VolumeDownIntent turn it down {Volume} in the {Room}
+VolumeDownIntent turn the volume down {Volume} in the {Room}
+VolumeDownIntent turn down the volume {Volume} in the {Room}
+VolumeDownIntent lower the volume {Volume} in the {Room}
+
+VolumeSetIntent set volume to {Volume} in the {Room}
+
+
+VolumeDownSpecificIntent turn speaker {Room} down {Volume}
+VolumeDownSpecificIntent turn speaker {Room} volume down {Volume}
+
+VolumeSetSpecificIntent set speaker volume to {Volume} in the {Room}
+
+VolumeUpSpecificIntent turn speaker {Room} up {Volume}
+VolumeUpSpecificIntent turn speaker {Room} volume up {Volume}
+
+
+NextTrackIntent go to next track in {Room}
+NextTrackIntent skip to next track in {Room}
+NextTrackIntent skip in {Room}
+NextTrackIntent skip song in {Room}
+NextTrackIntent next track in {Room}
+NextTrackIntent next song in {Room}
+NextTrackIntent skip this track in {Room}
+NextTrackIntent skip this song in {Room}
+
+PreviousTrackIntent go to previous track in {Room}
+PreviousTrackIntent go to the last song in {Room}
+PreviousTrackIntent go back in {Room}
+PreviousTrackIntent previous track in {Room}
+PreviousTrackIntent previous song in {Room}
+
+WhatsPlayingIntent check what's playing in {Room}
+WhatsPlayingIntent check what song this is in {Room}
+WhatsPlayingIntent check what band this is in {Room}
+WhatsPlayingIntent check who this is in {Room}
+WhatsPlayingIntent check what am i hearing in {Room}
